@@ -45,6 +45,32 @@ for cmd in plan-product create-spec execute-tasks analyze-product; do
     fi
 done
 
+# Create hooks directory
+mkdir -p "$HOME/.claude/hooks/utils/llm"
+
+# Download hook files
+echo ""
+echo "📥 Downloading Claude Code hooks to ~/.claude/hooks/"
+
+# Main hook files
+for hook in user_prompt_submit.py notification.py subagent_stop.py log_feature.py; do
+    curl -s -o "$HOME/.claude/hooks/${hook}" "${BASE_URL}/claude-code/hooks/${hook}"
+    chmod +x "$HOME/.claude/hooks/${hook}"
+    echo "  ✓ ~/.claude/hooks/${hook}"
+done
+
+# Utils files
+curl -s -o "$HOME/.claude/hooks/utils/constants.py" "${BASE_URL}/claude-code/hooks/utils/constants.py"
+curl -s -o "$HOME/.claude/hooks/utils/data_manager.py" "${BASE_URL}/claude-code/hooks/utils/data_manager.py"
+curl -s -o "$HOME/.claude/hooks/utils/logger.py" "${BASE_URL}/claude-code/hooks/utils/logger.py"
+curl -s -o "$HOME/.claude/hooks/utils/summarizer.py" "${BASE_URL}/claude-code/hooks/utils/summarizer.py"
+echo "  ✓ ~/.claude/hooks/utils/* files"
+
+# LLM utils
+curl -s -o "$HOME/.claude/hooks/utils/llm/anth.py" "${BASE_URL}/claude-code/hooks/utils/llm/anth.py"
+curl -s -o "$HOME/.claude/hooks/utils/llm/oai.py" "${BASE_URL}/claude-code/hooks/utils/llm/oai.py"
+echo "  ✓ ~/.claude/hooks/utils/llm/* files"
+
 # Download Claude Code user CLAUDE.md
 echo ""
 echo "📥 Downloading Claude Code configuration to ~/.claude/"
