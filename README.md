@@ -333,10 +333,10 @@ your-product/
 
 ```bash
 # To remove Agent OS completely
-curl -sSL https://raw.githubusercontent.com/bipa/pytagoras-programming_with_AI/main/setup_clean.sh | bash -s --all
+curl -sSL https://raw.githubusercontent.com/bipa/pytagoras-programming_with_AI/main/setup_clean.sh | bash -s -- --all
 
 # To remove only base installation
-curl -sSL https://raw.githubusercontent.com/bipa/pytagoras-programming_with_AI/main/setup_clean.sh | bash -s --claude-code
+curl -sSL https://raw.githubusercontent.com/bipa/pytagoras-programming_with_AI/main/setup_clean.sh | bash -s -- --base
 
 # To remove only Claude Code integration
-curl -sSL https://raw.githubusercontent.com/bipa/pytagoras-programming_with_AI/main/setup_clean.sh | bash -s --claude-code
+curl -sSL https://raw.githubusercontent.com/bipa/pytagoras-programming_with_AI/main/setup_clean.sh | bash -s -- --claude-code
