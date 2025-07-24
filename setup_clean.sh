@@ -89,7 +89,7 @@ if [ "$FORCE" = false ]; then
         echo "  📄 ~/.claude/CLAUDE.md"
     fi
     echo ""
-    read -p "Are you sure you want to continue? (y/N): " -n 1 -r
+    read -p "Are you sure you want to continue? (y/N): " -n 1 -r </dev/tty || REPLY="N"
     echo ""
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
         echo "❌ Cleanup cancelled."
