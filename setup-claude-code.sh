@@ -53,11 +53,18 @@ echo ""
 echo "📥 Downloading Claude Code hooks to ~/.claude/hooks/"
 
 # Main hook files
-for hook in pre_tool_use.py post_tool_use.py  user_prompt_submit.py notification.py subagent_stop.py log_feature.py; do
+for hook in pre_tool_use.py post_tool_use.py  user_prompt_submit.py notification.py subagent_stop.py log_feature.py .env; do
     curl -s -o "$HOME/.claude/hooks/${hook}" "${BASE_URL}/claude-code/hooks/${hook}"
     chmod +x "$HOME/.claude/hooks/${hook}"
     echo "  ✓ ~/.claude/hooks/${hook}"
 done
+
+# Download settings.local.json
+echo ""
+echo "📥 Downloading Claude Code settings to ~/.claude/"
+curl -s -o "$HOME/.claude/settings.local.json" "${BASE_URL}/claude-code/settings.local.json"
+echo "  ✓ ~/.claude/settings.local.json"
+
 
 # Utils files
 curl -s -o "$HOME/.claude/hooks/utils/constants.py" "${BASE_URL}/claude-code/hooks/utils/constants.py"

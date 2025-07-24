@@ -30,11 +30,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run .claude/hooks/pre_tool_use.py"
+            "command": "uv run ~/.claude/hooks/pre_tool_use.py"
           },
           {
             "type": "command",
-            "command": "uv run .claude/hooks/log_feature.py --source-app studyguide-template --event-type PreToolUse --summarize"
+            "command": "uv run ~/.claude/hooks/log_feature.py --source-app studyguide-template --event-type PreToolUse --summarize"
           }
         ]
       }
@@ -45,11 +45,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run .claude/hooks/post_tool_use.py"
+            "command": "uv run ~/.claude/hooks/post_tool_use.py"
           },
           {
             "type": "command",
-            "command": "uv run .claude/hooks/log_feature.py --source-app studyguide-template --event-type PostToolUse --summarize"
+            "command": "uv run ~/.claude/hooks/log_feature.py --source-app studyguide-template --event-type PostToolUse --summarize"
           }
         ]
       }
@@ -60,11 +60,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run .claude/hooks/notification.py --notify "
+            "command": "uv run ~/.claude/hooks/notification.py --notify "
           },
           {
             "type": "command",
-            "command": "uv run .claude/hooks/log_feature.py --source-app studyguide-template --event-type Notification --summarize"
+            "command": "uv run ~/.claude/hooks/log_feature.py --source-app studyguide-template --event-type Notification --summarize"
           }
         ]
       }
@@ -75,7 +75,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run .claude/hooks/log_feature.py --source-app studyguide-template --event-type Stop --add-chat"
+            "command": "uv run ~/.claude/hooks/log_feature.py --source-app studyguide-template --event-type Stop --add-chat"
           }
         ]
       }
@@ -86,11 +86,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run .claude/hooks/subagent_stop.py"
+            "command": "uv run ~/.claude/hooks/subagent_stop.py"
           },
           {
             "type": "command",
-            "command": "uv run .claude/hooks/log_feature.py --source-app studyguide-template --event-type SubagentStop"
+            "command": "uv run ~/.claude/hooks/log_feature.py --source-app studyguide-template --event-type SubagentStop"
           }
         ]
       }
@@ -101,7 +101,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run .claude/hooks/log_feature.py --source-app studyguide-template --event-type PreCompact"
+            "command": "uv run ~/.claude/hooks/log_feature.py --source-app studyguide-template --event-type PreCompact"
           }
         ]
       }
@@ -112,11 +112,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run .claude/hooks/user_prompt_submit.py --log-only"
+            "command": "uv run ~/.claude/hooks/user_prompt_submit.py --log-only"
           },
           {
             "type": "command",
-            "command": "uv run .claude/hooks/log_feature.py --source-app studyguide-template --event-type UserPromptSubmit --summarize "
+            "command": "uv run ~/.claude/hooks/log_feature.py --source-app studyguide-template --event-type UserPromptSubmit --summarize "
           }
         ]
       }

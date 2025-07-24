@@ -47,6 +47,13 @@ def main():
     # Check if logging is enabled from .env
     load_dotenv()
     
+    
+    # Check if logging is enabled from environment variable
+    # First try to load .env file from the hooks folder
+    hooks_env_path = os.path.join(os.path.dirname(__file__), '.env')
+    if os.path.exists(hooks_env_path):
+        load_dotenv(dotenv_path=hooks_env_path)
+    
     if os.environ.get("LOG_ENABLED", "true").lower() == "false":
         return
     

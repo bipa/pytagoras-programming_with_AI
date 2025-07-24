@@ -17,7 +17,9 @@ from utils.constants import ensure_session_log_dir
 
 try:
     from dotenv import load_dotenv
-    load_dotenv()
+    hooks_env_path = os.path.join(os.path.dirname(__file__), '.env')
+    if os.path.exists(hooks_env_path):
+        load_dotenv(dotenv_path=hooks_env_path)
 except ImportError:
     pass  # dotenv is optional
 

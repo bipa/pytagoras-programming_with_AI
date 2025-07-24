@@ -33,7 +33,7 @@ node_modules/
 *.tmp
 *.temp
 
-
+**/.env
 
 **/__pycache__/
 *.py[cod]
